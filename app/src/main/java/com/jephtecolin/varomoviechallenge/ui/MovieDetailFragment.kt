@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.jephtecolin.varomoviechallenge.R
+import dagger.hilt.android.AndroidEntryPoint
 
 
 /**
@@ -13,6 +14,8 @@ import com.jephtecolin.varomoviechallenge.R
  *
  *
  */
+
+@AndroidEntryPoint
 class MovieDetailFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
