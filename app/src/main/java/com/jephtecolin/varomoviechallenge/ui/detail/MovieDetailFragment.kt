@@ -1,4 +1,4 @@
-package com.jephtecolin.varomoviechallenge.ui
+package com.jephtecolin.varomoviechallenge.ui.detail
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
