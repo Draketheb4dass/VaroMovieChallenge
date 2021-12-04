@@ -31,9 +31,19 @@
             style="@style/Widget.AppCompat.RatingBar.Small"
             android:layout_marginStart="24dp"
             android:rating="@{movie.voteAverage/2f}"
+            android:layout_marginTop="12dp"
             app:layout_constraintTop_toBottomOf="@id/ivMoviePoster"
             app:layout_constraintStart_toStartOf="parent"
             tools:rating="4.5"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            app:srcCompat="@drawable/ic_bookmark_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivMoviePoster"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="12dp"/>
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvDescriptionLabel"
