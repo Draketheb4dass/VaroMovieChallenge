@@ -9,6 +9,10 @@
             type="com.jephtecolin.varomoviechallenge.data.model.Movie" />
 
         <import type="com.jephtecolin.varomoviechallenge.data.Api" />
+
+        <variable
+            name="onMovieClick"
+            type="android.view.View.OnClickListener" />
     </data>
 
 
@@ -17,6 +21,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
+        android:onClick="@{onMovieClick}"
         app:cardCornerRadius="10dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout

@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
+import androidx.navigation.findNavController
 import com.airbnb.epoxy.EpoxyController
 import com.airbnb.epoxy.EpoxyItemSpacingDecorator
 import com.airbnb.epoxy.EpoxyRecyclerView
@@ -15,6 +16,7 @@ import com.jephtecolin.varomoviechallenge.R
 import com.jephtecolin.varomoviechallenge.data.MovieDataSource
 import com.jephtecolin.varomoviechallenge.data.model.Movie
 import com.jephtecolin.varomoviechallenge.itemMovie
+import com.jephtecolin.varomoviechallenge.ui.detail.MovieDetailFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 
@@ -57,6 +59,9 @@ class HomeFragment : Fragment() {
                     itemMovie {
                         id(index)
                         movie(movie)
+                        onMovieClick { _ ->
+                            view.findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToMovieDetailFragment(movie))
+                        }
                     }
 
                 }

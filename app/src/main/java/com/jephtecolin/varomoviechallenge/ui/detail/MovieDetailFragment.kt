@@ -5,7 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.navArgs
 import com.jephtecolin.varomoviechallenge.R
+import com.jephtecolin.varomoviechallenge.data.model.Movie
+import com.jephtecolin.varomoviechallenge.databinding.FragmentMovieDetailBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 
@@ -17,15 +20,23 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MovieDetailFragment : Fragment() {
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
+    private val args: MovieDetailFragmentArgs by navArgs()
+    private lateinit var movieData: Movie
+    private lateinit var binding: FragmentMovieDetailBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_movie_detail, container, false)
+        binding = FragmentMovieDetailBinding.inflate(inflater, container, false)
+        return binding.root //inflater.inflate(R.layout.fragment_movie_detail, container, false)
+
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        movieData = args.movie
+        binding.movie = movieData
     }
 }

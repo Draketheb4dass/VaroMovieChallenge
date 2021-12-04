@@ -1,14 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.detail.MovieDetailFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <data>
+        <variable
+            name="movie"
+            type="com.jephtecolin.varomoviechallenge.data.model.Movie" />
+
+        <import type="com.jephtecolin.varomoviechallenge.data.Api" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        tools:context=".ui.detail.MovieDetailFragment">
 
-</FrameLayout>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivMoviePoster"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:layout_height="300dp"
+            imageUrl="@{Api.getBackdropPath(movie.backdropPath)}"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RatingBar
+            android:id="@+id/ratingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Widget.AppCompat.RatingBar.Small"
+            android:layout_marginStart="24dp"
+            android:rating="@{movie.voteAverage/2f}"
+            app:layout_constraintTop_toBottomOf="@id/ivMoviePoster"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:rating="4.5"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvDescriptionLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/ratingBar"
+            android:layout_marginTop="12dp"
+            android:layout_marginStart="24dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            android:text="Description"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tvDescriptionLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginHorizontal="24dp"
+            android:text="@{movie.overview}" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

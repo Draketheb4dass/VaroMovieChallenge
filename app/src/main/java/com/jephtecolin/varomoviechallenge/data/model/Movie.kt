@@ -1,7 +1,10 @@
 package com.jephtecolin.varomoviechallenge.data.model
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 data class Movie(
     var id: String,
     @SerializedName("imdb_id")
@@ -16,4 +19,4 @@ data class Movie(
     var voteCount: Int,
     @SerializedName("vote_average")
     var voteAverage: Float,
-)
+) : Parcelable
