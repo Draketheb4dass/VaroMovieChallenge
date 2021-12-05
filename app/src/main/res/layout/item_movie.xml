@@ -8,7 +8,7 @@
             name="movie"
             type="com.jephtecolin.varomoviechallenge.data.model.Movie" />
 
-        <import type="com.jephtecolin.varomoviechallenge.data.Api" />
+        <import type="com.jephtecolin.varomoviechallenge.data.remote.Api" />
 
         <variable
             name="onMovieClick"

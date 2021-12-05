@@ -1,7 +1,6 @@
 package com.jephtecolin.varomoviechallenge.data.remote
 
-import com.jephtecolin.varomoviechallenge.data.model.MoviesResponseModel
-import com.jephtecolin.varomoviechallenge.data.remote.TMDBService
+import com.jephtecolin.varomoviechallenge.data.remote.response.MoviesResponseModel
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import timber.log.Timber

@@ -12,7 +12,7 @@
             name="viewModel"
             type="com.jephtecolin.varomoviechallenge.ui.detail.MovieDetailViewModel" />
 
-        <import type="com.jephtecolin.varomoviechallenge.data.Api" />
+        <import type="com.jephtecolin.varomoviechallenge.data.remote.Api" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

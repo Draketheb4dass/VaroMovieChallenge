@@ -1,4 +1,4 @@
-package com.jephtecolin.varomoviechallenge.data
+package com.jephtecolin.varomoviechallenge.data.remote
 
 object Api {
     const val BASE_URL = "https://api.themoviedb.org/"

@@ -1,4 +1,4 @@
-package com.jephtecolin.varomoviechallenge.data
+package com.jephtecolin.varomoviechallenge.data.remote
 
 import android.content.Context
 import com.jephtecolin.varomoviechallenge.BuildConfig

@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
 import com.jephtecolin.varomoviechallenge.data.remote.MovieDataSource
-import com.jephtecolin.varomoviechallenge.data.model.MoviesResponseModel
+import com.jephtecolin.varomoviechallenge.data.remote.response.MoviesResponseModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 

@@ -1,14 +1,12 @@
 package com.jephtecolin.varomoviechallenge.di
 
-import com.jephtecolin.varomoviechallenge.BuildConfig
-import com.jephtecolin.varomoviechallenge.data.AuthenticationInterceptor
+import com.jephtecolin.varomoviechallenge.data.remote.AuthenticationInterceptor
 import com.jephtecolin.varomoviechallenge.data.remote.TMDBService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
-import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
