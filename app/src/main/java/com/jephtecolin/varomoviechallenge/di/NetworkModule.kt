@@ -25,7 +25,6 @@ object NetworkModule {
         .connectTimeout(5, TimeUnit.MINUTES)
         .writeTimeout(5, TimeUnit.MINUTES)
         .readTimeout(5, TimeUnit.MINUTES)
-        //.addNetworkInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
         .addInterceptor(AuthenticationInterceptor())
         .build()
 
