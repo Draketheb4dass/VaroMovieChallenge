@@ -15,13 +15,14 @@ import com.jephtecolin.varomoviechallenge.ItemMovieBindingModel_
 import com.jephtecolin.varomoviechallenge.R
 import com.jephtecolin.varomoviechallenge.data.MovieDataSource
 import com.jephtecolin.varomoviechallenge.data.model.Movie
+import com.jephtecolin.varomoviechallenge.databinding.FragmentHomeBinding
 import com.jephtecolin.varomoviechallenge.itemMovie
 import com.jephtecolin.varomoviechallenge.ui.detail.MovieDetailFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 
 /**
- * A simple [Fragment] subclass.
+ *  [HomeFragment] to display Now Playing movies from the TMDB API.
  *
  */
 @AndroidEntryPoint
@@ -29,12 +30,15 @@ class HomeFragment : Fragment() {
     private val viewModel: HomeViewModel by viewModels()
     private lateinit var controller: EpoxyController
     private val _nowPlayingMovies = mutableListOf<Movie>()
+    private lateinit var binding: FragmentHomeBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_home, container, false)
+        binding = FragmentHomeBinding.inflate(inflater, container, false)
+        binding.lifecycleOwner = this
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

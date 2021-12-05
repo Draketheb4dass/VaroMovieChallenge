@@ -14,8 +14,7 @@ import dagger.hilt.android.AndroidEntryPoint
 
 
 /**
- * A simple [Fragment] subclass.
- *
+ * [MovieDetailFragment] displays a movie detail.
  *
  */
 
