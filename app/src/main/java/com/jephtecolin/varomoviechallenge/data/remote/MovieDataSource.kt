@@ -1,4 +1,4 @@
-package com.jephtecolin.varomoviechallenge.data
+package com.jephtecolin.varomoviechallenge.data.remote
 
 import com.jephtecolin.varomoviechallenge.data.model.MoviesResponseModel
 import com.jephtecolin.varomoviechallenge.data.remote.TMDBService

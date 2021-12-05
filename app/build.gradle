@@ -28,7 +28,7 @@ android {
         def tmdbAppKeyProperties = new Properties()
         tmdbAppKeyProperties.load(new FileInputStream(tmdbAppKeyPropertiesFile))
 
-        buildConfigField "String", "TMDB_APP_KEY", "\"" + tmdbAppKeyProperties['TMDB_APP_KEY'].toString() + "\""
+        buildConfigField "String", "TMDB_API_KEY", "\"" + tmdbAppKeyProperties['TMDB_API_KEY'].toString() + "\""
     }
 
     buildTypes {
@@ -92,7 +92,8 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.7'
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
-    implementation "com.squareup.okhttp3:logging-interceptor:3.9.0"
+    implementation "com.squareup.okhttp3:logging-interceptor:4.9.3"
+    implementation "com.squareup.okhttp3:okhttp:4.9.3"
 
     // coroutines
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.0'
