@@ -9,6 +9,7 @@ import com.jephtecolin.varomoviechallenge.data.model.Movie
 
 @Database(entities = [Movie::class], version = 1, exportSchema = false)
 public abstract class VaroMovieRoomDatabase : RoomDatabase() {
+    abstract fun movieDao(): MovieDao
 
     companion object {
         @Volatile

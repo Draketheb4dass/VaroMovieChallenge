@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import com.jephtecolin.varomoviechallenge.R
 import com.jephtecolin.varomoviechallenge.data.model.Movie
@@ -23,13 +24,16 @@ class MovieDetailFragment : Fragment() {
     private val args: MovieDetailFragmentArgs by navArgs()
     private lateinit var movieData: Movie
     private lateinit var binding: FragmentMovieDetailBinding
+    private val viewModel: MovieDetailViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentMovieDetailBinding.inflate(inflater, container, false)
-        return binding.root //inflater.inflate(R.layout.fragment_movie_detail, container, false)
+        binding.viewModel = viewModel
+        binding.lifecycleOwner = this
+        return binding.root
 
     }
 

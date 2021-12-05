@@ -25,4 +25,9 @@
             app:argType="com.jephtecolin.varomoviechallenge.data.model.Movie" />
 
     </fragment>
+    <fragment
+        android:id="@+id/favoriteFragment"
+        android:name="com.jephtecolin.varomoviechallenge.ui.favorite.FavoriteFragment"
+        android:label="fragment_favorite"
+        tools:layout="@layout/fragment_favorite" />
 </navigation>

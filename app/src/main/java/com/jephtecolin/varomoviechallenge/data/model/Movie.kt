@@ -2,16 +2,19 @@ package com.jephtecolin.varomoviechallenge.data.model
 
 import android.os.Parcelable
 import androidx.annotation.Keep
+import androidx.annotation.NonNull
 import androidx.room.ColumnInfo
 import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 import kotlinx.parcelize.Parcelize
 
 
 @Keep
 @Parcelize
-@Entity(tableName = "favorite_table", primaryKeys = ["imdb_id"])
+@Entity(tableName = "favorite_table", primaryKeys = ["id"])
 data class Movie(
+    @NonNull
     var id: String,
     @ColumnInfo(name = "imdb_id")
     @SerializedName("imdb_id")

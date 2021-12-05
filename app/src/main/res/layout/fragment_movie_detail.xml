@@ -8,6 +8,10 @@
             name="movie"
             type="com.jephtecolin.varomoviechallenge.data.model.Movie" />
 
+        <variable
+            name="viewModel"
+            type="com.jephtecolin.varomoviechallenge.ui.detail.MovieDetailViewModel" />
+
         <import type="com.jephtecolin.varomoviechallenge.data.Api" />
     </data>
 
@@ -37,10 +41,12 @@
             tools:rating="4.5"/>
 
         <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivBookmark"
             android:layout_width="48dp"
             android:layout_height="48dp"
             app:srcCompat="@drawable/ic_bookmark_24"
             app:layout_constraintEnd_toEndOf="parent"
+            android:onClick="@{() -> viewModel.addToFavorite(movie)}"
             app:layout_constraintTop_toBottomOf="@id/ivMoviePoster"
             android:layout_marginEnd="24dp"
             android:layout_marginTop="12dp"/>

@@ -28,7 +28,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class HomeFragment : Fragment() {
     private val viewModel: HomeViewModel by viewModels()
     private lateinit var controller: EpoxyController
-    private val nowPlayingMovies = mutableListOf<Movie>()
+    private val _nowPlayingMovies = mutableListOf<Movie>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,12 +39,12 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val rvMovie : EpoxyRecyclerView = view.findViewById(R.id.rvMovie)
+        val rvMovie: EpoxyRecyclerView = view.findViewById(R.id.rvMovie)
 
-        viewModel.nowPlayingMovies.observe(viewLifecycleOwner) {
-            nowPlayingMovies.clear()
-            if (it != null) {
-                nowPlayingMovies.addAll(it.results)
+        viewModel.nowPlayingMovies.observe(viewLifecycleOwner) { nowPlayingMovies ->
+            _nowPlayingMovies.clear()
+            if (nowPlayingMovies != null) {
+                _nowPlayingMovies.addAll(nowPlayingMovies.results)
             }
             controller.requestModelBuild()
         }
@@ -54,8 +54,8 @@ class HomeFragment : Fragment() {
 
         rvMovie.withModels {
             controller = this
-            if (nowPlayingMovies.isNotEmpty()) {
-                nowPlayingMovies.forEachIndexed { index, movie ->
+            if (_nowPlayingMovies.isNotEmpty()) {
+                _nowPlayingMovies.forEachIndexed { index, movie ->
                     itemMovie {
                         id(index)
                         movie(movie)
