@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
-import com.jephtecolin.varomoviechallenge.R
 import com.jephtecolin.varomoviechallenge.data.model.Movie
 import com.jephtecolin.varomoviechallenge.databinding.FragmentMovieDetailBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -41,5 +40,7 @@ class MovieDetailFragment : Fragment() {
 
         movieData = args.movie
         binding.movie = movieData
+
+        viewModel.isFavorite(movieData.id)
     }
 }

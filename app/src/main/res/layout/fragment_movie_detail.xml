@@ -44,7 +44,7 @@
             android:id="@+id/ivBookmark"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            app:srcCompat="@drawable/ic_bookmark_24"
+            setBookmarked="@{viewModel.isMovieFavorite}"
             app:layout_constraintEnd_toEndOf="parent"
             android:onClick="@{() -> viewModel.addToFavorite(movie)}"
             app:layout_constraintTop_toBottomOf="@id/ivMoviePoster"

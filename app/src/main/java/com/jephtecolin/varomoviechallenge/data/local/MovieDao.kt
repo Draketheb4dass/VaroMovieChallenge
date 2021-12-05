@@ -18,4 +18,7 @@ interface MovieDao {
     @Query("DELETE FROM favorite_table WHERE :movieId = id")
     suspend fun removeFavorite(movieId: String)
 
+    @Query("SELECT EXISTS(SELECT * FROM favorite_table WHERE id = :movieId)")
+    fun isFavorite(movieId : String) : Flow<Boolean>
+
 }

@@ -5,6 +5,7 @@ import androidx.appcompat.widget.AppCompatImageView
 import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import com.jephtecolin.varomoviechallenge.R
 import timber.log.Timber
 
 @BindingAdapter(value = ["imageUrl", "placeholder"], requireAll = false)
@@ -28,5 +29,14 @@ fun imageUrl(imageView: AppCompatImageView, imageUrl: String?, placeholder: Draw
                 .apply(RequestOptions().placeholder(placeholder))
                 .into(imageView)
         }
+    }
+}
+
+@BindingAdapter("setBookmarked")
+fun setBookmarkIcon(imageView: AppCompatImageView, isBookmarked: Boolean) {
+    if (isBookmarked) {
+        imageView.setBackgroundResource(R.drawable.ic_bookmark_added_24)
+    } else {
+        imageView.setBackgroundResource(R.drawable.ic_bookmark_24)
     }
 }

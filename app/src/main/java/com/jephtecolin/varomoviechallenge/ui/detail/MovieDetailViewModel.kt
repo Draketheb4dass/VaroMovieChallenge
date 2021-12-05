@@ -1,8 +1,6 @@
 package com.jephtecolin.varomoviechallenge.ui.detail
 
-import android.view.View
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
 import com.jephtecolin.varomoviechallenge.data.local.MovieDao
 import com.jephtecolin.varomoviechallenge.data.model.Movie
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -19,6 +17,11 @@ class MovieDetailViewModel @Inject constructor(
         viewModelScope.launch(Dispatchers.IO) {
             movieDao.insertFavorite(movie)
         }
+    }
 
+    lateinit var isMovieFavorite: LiveData<Boolean>
+
+    fun isFavorite(movieId: String) {
+        isMovieFavorite = movieDao.isFavorite(movieId).asLiveData()
     }
 }
